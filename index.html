@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        *{
+            margin:0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width:100%;
+            height:10vh;
+            padding:2rem 1rem;
+            background-color:black;
+            
+        }
+        .logo h2{
+            font-size: 3rem;
+            font-weight: 100;
+            color:white;
+        }
+        .list{
+            display: flex;
+        }
+        .list ul{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .list ul li{
+            padding:0.7rem 1rem;
+            list-style: none;
+        }
+        .list ul li a{
+            color:white;
+            text-decoration: none;
+            text-transform: capitalize;
+            font-size: 1.3rem;
+        }
+        .list ul li a:hover{
+            color:cadetblue;
+        }
+        .section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding:2rem;
+            flex-wrap: wrap;
+            background: radial-gradient(pink ,rgb(212, 97, 117));
+            height:100vh;
+        }
+        .first{
+            display: flex;
+            width:50%;
+            padding-left:2rem;
+            flex-direction: column;
+        }
+        .first h3{
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .first p{
+            font-size: 1.4rem;
+            margin-bottom: 1rem; 
+        }
+        .btn{
+         padding:0.7rem 1rem;
+         font-size:1.1rem;
+         background-color:orange;
+         cursor: pointer;
+         width:10rem;
+         border:none;
+         border-radius:12rem;
+         transition: background-color 0.4s ease-in;
+        }
+        .btn:hover{
+            background-color:orangered;
+
+        }
+        .second{
+            width:50%;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .second img{
+            width:70%;
+        }
+        .togglearea{
+            display: none;
+            float:right;
+            right:20px;
+            color:white;
+        }
+        .id1{
+            color:yellow;
+            cursor: pointer;
+        }
+        .id2{
+            color:red;
+            display: none;
+            cursor: pointer;
+        }
+        #toggle{
+            display: none;
+        }
+      
+
+        @media screen and  (max-width:700px){
+            .list{
+                display: none;
+            }
+          #toggle:checked + .list{
+              display: flex;
+          }   
+          .togglearea{
+              display: flex;
+          }
+          .togglearea i{
+              font-size: 2rem;
+              cursor: pointer;
+          }
+          .togglearea .id2{
+              display: none;
+          }
+          .footer{
+              flex-wrap: wrap;
+          }
+          .col-1{
+              flex:1 1 300px ;
+              text-align: center;
+              margin:1rem;
+          }
+        
+.id1:checked ~ .id2{
+    display: flex;
+}
+
+.id2:checked ~ .id1{
+    display: none;
+}
+       .first{
+           text-align: center;
+           padding-left:0rem;
+       }
+       .btn{
+           margin:auto;
+       }
+          .list{
+              background-color:pink;
+              width: 100%;height: auto;
+              top:65px;
+              left:0px;
+              position: absolute;
+              text-align: center;
+              justify-content: center;
+              align-items: center;
+              transition: all 0.4s ease-in;
+          }
+          .list ul {
+              flex-direction: column;
+          }
+          .section{
+              height:auto;
+              padding:4rem;
+              
+          }
+          .navbar{
+              padding:2rem 0rem;
+          }
+          .first{
+              width:100%;
+              margin:3.3rem 0rem;
+              
+          }
+          .second{
+             margin-top: 1rem;
+              width:100%;
+          }
+          .second img{
+              width:60%;
+          }
+          .container1{
+              flex-wrap: wrap;
+              padding:0rem 6rem;
+          }
+          .box{
+            flex: 1 1 150px;
+              height:auto;
+              cursor: pointer;
+              transition: transform 0.4s ease-in;
+          }
+          .box:hover{
+              cursor: pointer;
+              transform:translateY(2deg);
+          }
+          .navbar{
+            padding: 2rem 3rem;
+    justify-content: space-between;
+        }
+        .products{
+            flex-wrap: wrap;
+        }
+        .pro{
+            flex: 1 1 150px;
+        }
+        .clients_back{
+   flex-wrap: wrap;
+        }
+        .imge{
+            flex: 1 1 150px;
+            text-align: center;
+        }
+         
+        }
+        @media screen and (min-width:600px) and (max-width:700px)
+        {
+        .navbar{
+            padding: 2rem 3rem;
+    justify-content: space-between;
+        }
+        }
+
+        @media screen and (min-width:700px) and (max-width:800px){
+    .navbar {
+        width:111%;
+    }
+    .section{
+               width:111%;
+           }
+           .container{
+               width:111%;
+           }
+           .clients{
+               width:111%;
+           }
+           .footer{
+               width:111%;
+           }
+           footer{
+               width:111%;
+           }
+           .products{
+               width:111%;
+           }
+           .clients_back{
+               width:100%;
+               flex-wrap: wrap;
+           }
+           .imge{
+               flex:2 2 100px;
+           }
+        }
+        @media screen and (min-width:800px) and (max-width:900px){
+            .first p{
+                font-size: 1rem;
+            }
+            .second img{
+                width:90%;
+            }
+           .navbar{
+               width:114%;
+           }
+           .section{
+               width:114%;
+           }
+           .container{
+               width:114%;
+           }
+           .clients{
+               width:114%;
+           }
+           .footer{
+               width:114%;
+           }
+           footer{
+               width:114%;
+           }
+           .products{
+               width:114%;
+           }
+        }
+        .container{
+            display: flex;
+            padding:2rem 0rem;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        .container h2{
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-transform: capitalize;
+        }
+        .container1{
+            display: flex;
+             padding:0rem 2rem;
+            justify-content: center;
+            text-align: center;
+        }
+        .box{
+            width:25%;
+            margin:1rem;
+         
+           box-shadow: 2px 3px 4px grey;
+        }
+        .box img{
+            width:100%;
+        }
+        .box{
+            flex: 1 1 200px;
+              height:auto;
+              cursor: pointer;
+              transition: transform infinite ease-in;
+          }
+          .box:hover{
+              cursor: pointer;
+              transform:perspective(200px) rotateY(10deg)   ;
+          }
+          .rating i{
+              color: tomato;
+          }
+          .products{
+              display: flex;
+              padding:2rem;
+              justify-content: center;
+              align-items: center;
+          }
+          .pro{
+              box-shadow:  2px 3px 4px grey;
+              width:20%;
+              margin: 1rem;
+              height:auto;
+              border-radius: 200px;
+          }
+          .pro img{
+              width:100%;
+              border-radius: 200px;
+          }
+          .clients{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+              padding:2rem;
+            
+          
+          }
+          .clients h3{
+              font-size: 3rem;
+              text-shadow: 4px 2px 4px grey;
+              font-weight: 100;
+          }
+          .clients_back{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              
+          }
+          .imge{
+              margin:1rem;
+              filter: grayscale(100%);
+              cursor: pointer;
+          }
+          .imge:hover{
+              filter:grayscale(0);
+          }
+          .imge img{
+              width:150px;
+          }
+          .sec1{
+              flex-direction: column;
+              align-items: flex-start;
+          }
+          .sec1 p{
+              margin-bottom: 1rem;
+              font-size: 1.2rem;
+          }
+          .sec1 h3{
+              font-size: 3rem;
+              font-weight: 100;
+          }
+         
+          .section1{
+              
+              background: radial-gradient(pink ,rgb(212, 97, 117));
+          }
+          .footer{
+              display:flex;
+              background-color: black;
+              color:white;
+              padding:3rem;
+              justify-content: space-around;
+              align-items: center;
+
+          }
+          .col-1{
+              font-size: 1.2rem;
+              color:grey;
+              
+          }
+          .col-1 h4{
+              margin:0.3rem 0rem;
+              text-transform: capitalize;
+              font-weight: 100;
+              color:white;
+          }
+          .col-1 p{
+              cursor: pointer;
+          }
+          .col-1 p:hover{
+              color:hotpink;
+          }
+          footer{
+              background-color: black;
+              color:grey;
+              text-align: center;
+              border:2px solid grey;
+          }
+
+    </style>
+</head>
+<body>
+   
+     <nav class="navbar">
+         <div class="logo">
+             <h2>LOGO</h2>
+         </div>
+         <div class="togglearea">
+            <label for="toggle">
+                <i class="fa fa-bars " aria-hidden="true" ></i>
+                
+            </label>
+        </div>
+       
+       
+        <input type="checkbox" id="toggle">
+      
+         <div class="list">
+             <ul>
+                <li><a href="#">home</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">services</a></li>
+                <li><a href="#">portfolio</a></li>
+                <li><a href="#">contact</a></li>
+             </ul>
+         </div>
+     </nav>
+
+     <div class="section">
+         <div class="first">
+           <h3>
+               Welcome to Our Shopping Store.
+           </h3>
+           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid ipsum voluptatibus ad cupiditate, provident voluptatem accusantium optio fugiat natus molestiae beatae! Labore architecto perspiciatis eos sapiente et quam saepe? Tempore animi quo beatae?</p>
+           <input type="button" value="explore now 	&#8594" class="btn">
+         </div>
+         <div class="second">
+            <img src="smart-removebg-preview.png">
+         </div>
+     </div>
+
+     <div class="products">
+        <div class="pro">
+            <img src="img1.jfif">
+        </div>
+        <div class="pro">
+            <img src="img3.jfif">
+        </div>
+        <div class="pro">
+            <img src="img4.jfif">
+        </div>     
+    </div>
+
+     <div class="container">
+         <h2>
+             featured products
+         </h2>
+         <div class="container1">
+             <div class="box">
+                <img src="img1.jfif">
+                <h4>Red Printed-Tshirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+                <p>$50.00</p>
+             </div>
+             <div class="box">
+                <img src="img2.jfif">
+                <h4>Red Printed-Tshirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+                <p>$50.00</p>
+             </div>
+             <div class="box">
+                <img src="img3.jfif">
+                <h4>Red Printed-Tshirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+                <p>$50.00</p>
+             </div>
+             <div class="box">
+                <img src="img4.jfif">
+                <h4>Red Printed-Tshirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+                <p>$50.00</p>
+             </div>
+         </div>
+         <div class="container1">
+            <div class="box">
+               <img src="img5.jfif">
+               <h4>Red Printed-Tshirt</h4>
+               <div class="rating">
+                   <i class="fa fa-star" aria-hidden="true"></i>
+                   <i class="fa fa-star" aria-hidden="true"></i>
+                   <i class="fa fa-star" aria-hidden="true"></i>
+                   <i class="fa fa-star-o" aria-hidden="true"></i>
+                   <i class="fa fa-star-o" aria-hidden="true"></i>
+               </div>
+               <p>$50.00</p>
+            </div>
+            <div class="box">
+               <img src="img6.jfif">
+               <h4>Red Printed-Tshirt</h4>
+               <div class="rating">
+                   <i class="fa fa-star" aria-hidden="true"></i>
+                   <i class="fa fa-star" aria-hidden="true"></i>
+                   <i class="fa fa-star" aria-hidden="true"></i>
+                   <i class="fa fa-star-o" aria-hidden="true"></i>
+                   <i class="fa fa-star-o" aria-hidden="true"></i>
+               </div>
+               <p>$50.00</p>
+            </div>
+            <div class="box">
+               <img src="img7.jfif">
+               <h4>Red Printed-Tshirt</h4>
+               <div class="rating">
+                   <i class="fa fa-star" aria-hidden="true"></i>
+                   <i class="fa fa-star" aria-hidden="true"></i>
+                   <i class="fa fa-star" aria-hidden="true"></i>
+                   <i class="fa fa-star-o" aria-hidden="true"></i>
+                   <i class="fa fa-star-o" aria-hidden="true"></i>
+               </div>
+               <p>$50.00</p>
+            </div>
+            <div class="box">
+               <img src="img8.jfif">
+               <h4>Red Printed-Tshirt</h4>
+               <div class="rating">
+                   <i class="fa fa-star" aria-hidden="true"></i>
+                   <i class="fa fa-star" aria-hidden="true"></i>
+                   <i class="fa fa-star" aria-hidden="true"></i>
+                   <i class="fa fa-star-o" aria-hidden="true"></i>
+                   <i class="fa fa-star-o" aria-hidden="true"></i>
+               </div>
+               <p>$50.00</p>
+            </div>
+        </div>
+     </div>
+
+     
+     <div class="section section1" >
+         <div class="first">
+             <img src="band-removebg-preview (1).png">
+         </div>
+         <div class="second sec1">
+          <p>
+              exclusive available on RedStore.
+          </p>
+          <h3>
+              Smart watch Band-10
+          </h3>
+          <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quibusdam quae molestiae incidunt. Consequatur deleniti temporibus debitis numquam quae exercitationem hic laborum!
+          </p>
+          <input type="button " class="btn" value="buy now &#8594"> 
+         </div>
+     </div>
+
+     <div class="clients">
+        <h3>Clients</h3>
+        <div class="clients_back">
+           <div class="imge">
+               <img src="phillips-removebg-preview.png">
+           </div>
+           <div class="imge">
+              <img src="oppo-removebg-preview.png">
+          </div>
+          <div class="imge">
+              <img src="coco-removebg-preview.png">
+          </div>
+          <div class="imge">
+              <img src="godrej-removebg-preview.png">
+          </div>
+          <div class="imge">
+              <img src="phillips-removebg-preview.png">
+          </div>
+        </div>
+    </div>
+
+    
+        <div class="footer">
+         <div class="col-1">
+             <h4>
+                 contact us
+             </h4>
+             <p>shyam nagar main sukhliya,<br> indore (Madhaya Pradesh)</p>
+             <p>766972908423</p>
+         </div>
+         <div class="col-1">
+            <h4>
+           follow us 
+            </h4>
+              <p>instagram</p>
+              <p>linkedin</p>
+              <p>telegram</p>
+              <p>facebook</p>
+        </div>
+
+        <div class="col-1">
+            <h4>
+                useful links 
+            </h4>
+              <p>instagram</p>
+              <p>linkedin</p>
+              <p>telegram</p>
+              <p>facebook</p>
+        </div>
+        </div>
+    <footer>
+        <p>copywrite from here | 2021</p>
+    </footer>
+
+</body>
+</html>
